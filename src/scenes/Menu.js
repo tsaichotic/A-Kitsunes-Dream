@@ -49,10 +49,6 @@ class Menu extends Phaser.Scene {
         this.optionGroup = this.add.group();
         this.optionOffset = 100;
         this.start = this.add.sprite(game.config.width/2 + this.optionOffset, game.config.height/4, 'start').setOrigin(0.5);
-        this.option = this.add.sprite(game.config.width/2 + 2*this.optionOffset, game.config.height/4 + 100, 'start').setOrigin(0.5); //to be added
-        this.help = this.add.sprite(game.config.width/2 + 3*this.optionOffset, game.config.height/4 + 200, 'start').setOrigin(0.5); //to be added
-        this.optionGroup.addMultiple([this.start, this.option, this.help]);
-        this.optionGroup.setAlpha(0);
 
         this.add.tween({
             targets: [this.start, this.option, this.help],
@@ -127,62 +123,17 @@ class Menu extends Phaser.Scene {
         // set up Phaser-provided cursor key input
         cursors = this.input.keyboard.createCursorKeys();
         keyENTER = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER);
-        if(this.input.keyboard.checkDown(cursors.up, 250)) {
-            if(this.selected > 1) {
-                this.selected--;
-            }
-            else {
-                this.selected = 3;
-            }
-        }
-        else if(this.input.keyboard.checkDown(cursors.down, 250)) {
-            if(this.selected < 3) {
-                this.selected++;
-            }
-            else {
-                this.selected = 1;
-            }
-        }
-        else if(this.selected == 1) {
-            this.start.setTint(0xff0000).setScale(1.2);
-            this.option.setTint().setScale();
-            this.help.setTint().setScale();
-        }
-        else if(this.selected == 2) {
-            this.start.setTint().setScale();
-            this.option.setTint(0xff0000).setScale(1.2);
-            this.help.setTint().setScale();
-        }
-        else if(this.selected == 3) {
-            this.start.setTint().setScale();
-            this.option.setTint().setScale();
-            this.help.setTint(0xff0000).setScale(1.2);
-        }
         if(Phaser.Input.Keyboard.JustDown(keyENTER)) {
             this.input.keyboard.enabled = false;
-            if(this.selected == 1) {
-                this.tweens.add({        // fade out
-                    targets: bgMusic,
-                    volume: 0,
-                    ease: 'Linear',
-                    duration: 1500,
-                });
-                this.time.delayedCall(1500, () => {bgMusic.stop();});
-                this.cameras.main.fadeOut(1500, 255, 255, 255);
-                this.time.delayedCall(1500,() => {this.scene.start("playScene");});
-            }
-            if(this.selected == 2) {
-                this.cameras.main.fadeOut(500);
-                this.time.delayedCall(500,() => {
-                    this.cameras.main.fadeIn(1);
-                    this.input.keyboard.enabled = true;
-                    this.scene.launch("optionScene");
-                });
-            }
-            if(this.selected == 3) {
-                //to be added
-                this.scene.start("playScene");
-            }
+            this.tweens.add({        // fade out
+                targets: bgMusic,
+                volume: 0,
+                ease: 'Linear',
+                duration: 1500,
+            });
+            this.time.delayedCall(1500, () => {bgMusic.stop();});
+            this.cameras.main.fadeOut(1500, 255, 255, 255);
+            this.time.delayedCall(1500,() => {this.scene.start("playScene");});
         }
     }
 }
