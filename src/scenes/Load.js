@@ -5,7 +5,7 @@ class Load extends Phaser.Scene {
 
     preload(){
         this.load.path = "./assets/bg/";
-        this.load.image('fox1_bg', 'dark_forest.png');
+        this.load.image('fox1_bg', 'forest.png');
 
         // these need to be atlas later
         this.load.path = "./assets/fox_sprites/";
