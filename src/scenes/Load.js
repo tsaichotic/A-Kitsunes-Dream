@@ -116,6 +116,8 @@ class Load extends Phaser.Scene {
     }
 
     create() {
+        bgMusic = this.sound.add('menu_ost', {volume: bg_volume, loop: true});
+        bgMusic.play();
         this.scene.start("menuScene");
         // this.scene.start("optionScene");
     }

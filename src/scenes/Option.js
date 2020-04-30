@@ -65,17 +65,19 @@ class Option extends Phaser.Scene {
                 if(this.input.keyboard.checkDown(cursors.left, 250) && volPt > 0){
                     volPt --;
                     bg_volume = this.volume_array[volPt];
+                    bgMusic.volume = bg_volume;
                 }
                 else if(this.input.keyboard.checkDown(cursors.right, 250) && volPt < 10){
                     volPt ++;
                     bg_volume = this.volume_array[volPt];
+                    bgMusic.volume = bg_volume;
                 }
                 break;
             }
 
             case 2:{
                 if(Phaser.Input.Keyboard.JustDown(keyENTER)){
-                    this.isFullscreen ? this.scale.stopFullScreen() : this.scale.startFullScreen();
+                    this.isFullscreen ? this.scale.stopFullscreen() : this.scale.startFullscreen();
                 }
                 break;
             }
@@ -89,7 +91,8 @@ class Option extends Phaser.Scene {
                         duration: 500
                     });
                     this.time.delayedCall(500,() => {
-                        this.scene.stop("optionScene");
+                        this.scene.resume("menuScene");
+                        this.scene.stop();
                     });
                     break;
                 }
