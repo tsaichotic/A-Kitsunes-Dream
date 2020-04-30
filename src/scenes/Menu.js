@@ -48,7 +48,7 @@ class Menu extends Phaser.Scene {
         //start buttons
         this.optionGroup = this.add.group();
         this.optionOffset = 100;
-        this.start = this.add.sprite(game.config.width/2 + this.optionOffset, game.config.height/4, 'start').setOrigin(0.5);
+        this.start = this.add.sprite(game.config.width/2 + this.optionOffset, game.config.height/4+100, 'start').setOrigin(0.5);
         this.start.alpha = 0
 
         this.add.tween({

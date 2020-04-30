@@ -7,7 +7,7 @@ class Play extends Phaser.Scene {
         this.cameras.main.fadeIn(2000, 255, 255, 255);
         this.input.keyboard.enabled = true;
         this.obstacleSpeed = -450;
-        this.obstacleSpeed = -1500;
+        // this.obstacleSpeed = -1500;
         this.obstacleMin = 4000;
         this.obstacleMax = 5000;
         this.obstacleSpreadMin = 850;
@@ -237,8 +237,8 @@ class Play extends Phaser.Scene {
         let death = this.add.sprite(this.fox.x, this.fox.y, 'death').setOrigin(1);
         death.anims.play('death'); // explosion animation
 
-        this.cameras.main.fadeOut(2000, 255, 255, 255);
-        this.time.delayedCall(2000, () => {this.scene.start("gameOverScene");});
+        this.cameras.main.fadeOut(1500, 255, 255, 255);
+        this.time.delayedCall(1500, () => {this.scene.start("gameOverScene");});
     }
 
 
