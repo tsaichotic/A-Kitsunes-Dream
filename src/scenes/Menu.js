@@ -4,7 +4,6 @@ class Menu extends Phaser.Scene {
     }
 
     create() {
-        // this.sound.pauseOnBlur = false
         if (!bgMusic.isPlaying){
             bgMusic = this.sound.add('menu_ost', {volume: bg_volume, loop: true});
             bgMusic.play();
