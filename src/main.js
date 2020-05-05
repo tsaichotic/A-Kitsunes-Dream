@@ -1,12 +1,3 @@
-////////////////////////////////////////////////////////////////////////////////////
-// Developed by Nathan Ma, Sam Nguyen, Victor Chung
-// Published by Abomination
-// A Kitsune's Dream
-// This game revolves around the story of the nine-tailed fox, the Kitsune.
-// As the player advances into the game, the fox will change forms,
-// and grow up to nine tails to signify the players progression.
-////////////////////////////////////////////////////////////////////////////////////
-
 "use strict";
 
 // global variables
