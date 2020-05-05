@@ -1,3 +1,3 @@
-# Abomination-Endless-Runner
+# A Kitsunes Dream
 
-https://ndma-ucsc.github.io/A-Kitsunes-Dream/
+https://tsaichotic.github.io/A-Kitsunes-Dream/
