@@ -80,11 +80,11 @@ class Menu extends Phaser.Scene {
                 suffix: '',
                 zeroPad: 0
             }),
-            frameRate: 6,
+            frameRate: 5,
             yoyo: true,
             repeat: -1
         });
-        this.snooze = this.add.sprite(game.config.width/4 + 15, game.config.height/2 + 100, 'fox_atlas', 'snooze1').setDepth(100).setOrigin(1);
+        this.snooze = this.add.sprite(game.config.width/4 + 40, game.config.height/2 + 95, 'fox_atlas', 'snooze1').setDepth(100).setOrigin(1);
         this.snooze.anims.play('snooze');
         
         // fox death
