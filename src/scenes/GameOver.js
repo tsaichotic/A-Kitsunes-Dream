@@ -4,12 +4,12 @@ class GameOver extends Phaser.Scene {
     }
 
     create() {
-        // this.sound.pauseOnBlur = false
+        // console.log('gameoverScene');
         this.selected = 1
         this.cameras.main.setBackgroundColor('#FFFFFF');
         this.input.keyboard.enabled = false;
-        this.cameras.main.fadeIn(1500, 255, 255, 255);
-        this.time.delayedCall(1000, () => {this.input.keyboard.enabled = true;});
+        this.cameras.main.fadeIn(1200, 255, 255, 255);
+        this.time.delayedCall(700, () => {this.input.keyboard.enabled = true;});
 
         let gameOverConfig = {
             fontFamily: 'Bradley Hand',
@@ -87,11 +87,11 @@ class GameOver extends Phaser.Scene {
                     targets: bgMusic,
                     volume: 0,
                     ease: 'Linear',
-                    duration: 1500,
+                    duration: 1000,
                 });
-                this.time.delayedCall(1500, () => {bgMusic.stop();});
-                this.cameras.main.fadeOut(1500);
-                this.time.delayedCall(1500, () => {this.scene.start("menuScene");})
+                this.time.delayedCall(1000, () => {bgMusic.stop();});
+                this.cameras.main.fadeOut(1000);
+                this.time.delayedCall(1000, () => {this.scene.start("menuScene");})
             }
         }
     }

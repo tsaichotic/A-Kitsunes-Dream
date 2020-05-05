@@ -1,5 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////////
-// Created by Jolene Tsai in collaboration with Nathan Ma
+// Developed by Nathan Ma, Sam Nguyen, Victor Chung
+// Published by Abomination
+// A Kitsune's Dream
 // This game revolves around the story of the nine-tailed fox, the Kitsune.
 // As the player advances into the game, the fox will change forms,
 // and grow up to nine tails to signify the players progression.
@@ -15,7 +17,7 @@ const tileSize = 30;
 
 let config = {
   type: Phaser.AUTO,
-  title: "Fox Runner",
+  title: "A Kitsune's Dream",
   scale: {
       mode: Phaser.Scale.FIT,
       autoCenter: Phaser.Scale.CENTER_BOTH,
@@ -35,7 +37,7 @@ let config = {
 let game = new Phaser.Game(config);
 
 // reserve some keyboard variables
-let keyF, keyP, keyLEFT, keyRIGHT, keyUP, keyDOWN, keyENTER;
+let keyF, keyP, keyLEFT, keyRIGHT, keyUP, keyDOWN, keyENTER, keyESC;
 let bgMusic;
 let volPt = 5;
 let bg_volume = 0.5;
