@@ -165,7 +165,7 @@ class Play extends Phaser.Scene {
                     ease: 'Linear',
                     duration: 1500,
                 });
-                bgMusic = this.sound.add(`${this.fox_sprite[this.level - 1]}_ost`, {volume: 0, loop: false});                
+                bgMusic = this.sound.add(`${this.fox_sprite[this.level - 1]}_ost`, {volume: 0, loop: true});                
                 bgMusic.play();
                 this.tweens.add({        // fade in
                     targets: bgMusic,
