@@ -6,8 +6,8 @@ class GameOver extends Phaser.Scene {
     create() {
         // console.log('gameoverScene');
         this.selected = 1
-        this.cameras.main.setBackgroundColor('#FFFFFF');
         this.input.keyboard.enabled = false;
+        this.add.image(0,0,'option_bg').setOrigin(0);
         this.cameras.main.fadeIn(1200, 255, 255, 255);
         this.time.delayedCall(700, () => {this.input.keyboard.enabled = true;});
 
@@ -34,9 +34,9 @@ class GameOver extends Phaser.Scene {
         };
 
         this.optionOffset = 70;
-        this.gameOverText = this.add.text(game.config.width/2 + this.optionOffset, game.config.height/4, 'Game Over', gameOverConfig).setOrigin(0);
-        this.restartText = this.add.text(game.config.width/2 + 2*this.optionOffset, game.config.height/4 + 70, 'Restart...', choiceConfig).setOrigin(0);
-        this.returnMenuText = this.add.text(game.config.width/2 + 3*this.optionOffset, game.config.height/4 + 140, 'Main Menu...', choiceConfig).setOrigin(0);
+        this.gameOverText = this.add.text(game.config.width/2 + this.optionOffset, game.config.height/7 - 10, 'Game Over', gameOverConfig).setOrigin(0);
+        this.restartText = this.add.text(game.config.width/2 + 2*this.optionOffset, game.config.height/7 + 60, 'Restart...', choiceConfig).setOrigin(0);
+        this.returnMenuText = this.add.text(game.config.width/2 + 3*this.optionOffset, game.config.height/7 + 130, 'Main Menu...', choiceConfig).setOrigin(0);
         
         keyENTER = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER);
         cursors = this.input.keyboard.createCursorKeys();
